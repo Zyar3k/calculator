@@ -2,14 +2,11 @@ const buttons = document.querySelector('.buttons');
 const resultDisplay = document.querySelector('.result');
 const point = document.querySelector('.point');
 
-
 let stringNumber,
     currentNumber,
     previousNumber,
     keepedOperator,
     result;
-
-
 
 const clear = () => {
   currentNumber = 0;
@@ -19,8 +16,7 @@ const clear = () => {
   stringNumber = currentNumber;
   resultDisplay.innerText = currentNumber;
   point.disabled = false;
-  console.log('clear');
-}
+};
 clear();
 
 const clearAll = () => {
@@ -28,8 +24,7 @@ const clearAll = () => {
   resultDisplay.innerText = currentNumber;
   stringNumber = "";
   point.disabled = false;
-  console.log('clearAll');
-}
+};
 
 const calculation = (calc, a, b) => {
   switch (calc){
@@ -49,9 +44,8 @@ const calculation = (calc, a, b) => {
         return alert('You can\'t divide by 0!');
       }
       break;
-  }
-  
-}
+  }  
+};
 
 const number = (evt) => {
   if (stringNumber === 0) {
@@ -60,7 +54,7 @@ const number = (evt) => {
   stringNumber += evt;
   currentNumber = parseFloat(stringNumber.replace(point.innerText, "."));
   resultDisplay.innerText = stringNumber;
-}
+};
 
 const operator = (evt) => {
   if (keepedOperator !== "") {
@@ -74,7 +68,7 @@ const operator = (evt) => {
   keepedOperator = evt;
   stringNumber = "";
   point.disabled = false;
-}
+};
 
 const equal = () => {
   calculation(keepedOperator, previousNumber, currentNumber);
@@ -86,16 +80,14 @@ const equal = () => {
   } else {
     resultDisplay.innerText = currentNumber.toString().replace(".", point.innerText);
   }
-}
+};
 
 function sign() {
   stringNumber = resultDisplay.innerText;
   stringNumber += point.innerText;
   resultDisplay.innerText = stringNumber;
   point.disabled = true;
-}
-
-// listeners
+};
 
 buttons.addEventListener('click', evt => {
   if(evt.target.className.includes("number")){
@@ -110,7 +102,5 @@ buttons.addEventListener('click', evt => {
     equal();
   } else if (evt.target.className.includes("point")) {
     sign();
-  }
-    
-  
+  }  
 });

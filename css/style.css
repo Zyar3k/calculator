@@ -5,18 +5,63 @@
 body {
   padding: 0;
   margin: 0;
-  background: linear-gradient(to right, yellow, white, blue);
+  background: linear-gradient(to right, yellow, blue);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
 }
 
-.result {
-  width: 300px;
-  height: 200px;
-  background: grey;
-  color: white;
+.calculator {
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  min-height: 100vh;
+  -ms-grid-columns: (100px)[4];
+      grid-template-columns: repeat(4, 100px);
+  -ms-grid-rows: minmax(120px, auto) (100px)[5];
+      grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+  text-shadow: 4px 4px 4px black;
 }
 
 button {
-  width: 100px;
-  height: 100px;
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid transparent;
+  outline: none;
+  background: transparent;
+  text-shadow: 1px 1px 3px black;
+}
+
+button:hover {
+  text-shadow: 2px 2px 7px black;
+  font-weight: bolder;
+}
+
+.dbl {
+  -ms-grid-column: span 2;
+      grid-column: span 2;
+}
+
+.result {
+  grid-column: 1 / -1;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: end;
+      align-items: flex-end;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+  color: white;
+  border-radius: 12px;
+  font-size: 40px;
 }
 /*# sourceMappingURL=style.css.map */
