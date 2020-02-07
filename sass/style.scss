@@ -117,3 +117,25 @@ button:hover {
   border-radius: 12px;
   font-size: 40px;
 }
+
+@media (max-width: 399px) {
+
+  .calculator {
+    margin: 0 auto;
+    grid-template-rows: repeat(5, 90px);
+    grid-template-columns: repeat(4, 90px);
+  }
+
+  button {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 320px) {
+  
+  .calculator {
+    margin: 0 auto;
+    grid-template-rows: repeat(5, 90px);
+    grid-template-columns: repeat(4, 80px);
+  }
+}

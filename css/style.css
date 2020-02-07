@@ -112,4 +112,27 @@ button:hover {
   border-radius: 12px;
   font-size: 40px;
 }
+
+@media (max-width: 399px) {
+  .calculator {
+    margin: 0 auto;
+    -ms-grid-rows: (90px)[5];
+        grid-template-rows: repeat(5, 90px);
+    -ms-grid-columns: (90px)[4];
+        grid-template-columns: repeat(4, 90px);
+  }
+  button {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 320px) {
+  .calculator {
+    margin: 0 auto;
+    -ms-grid-rows: (90px)[5];
+        grid-template-rows: repeat(5, 90px);
+    -ms-grid-columns: (80px)[4];
+        grid-template-columns: repeat(4, 80px);
+  }
+}
 /*# sourceMappingURL=style.css.map */
