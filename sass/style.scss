@@ -1,36 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Black+Ops+One&display=swap');
+
+$font-first: 'Permanent Marker', cursive;
+$font-second: 'Black Ops One', cursive;
+
+$color-dark: #111111;
+$color-light: #FFFFFF;
+$color-l-third: lightgrey;
+$color-third: grey;
+$color-mil-bgd: #4B5320;
+$color-mil-light: #C1C6A5;
+$color-mil-third: #707941;
+$color-mil-d-third: #272D0B;
+
 *, *::before, *::after {
-  box-sizing: border-box;  
+  box-sizing: border-box;
 }
 
 body {
   padding: 0;
-  margin: 0;
+  margin: 0;  
+}
+
+.container {
   background: linear-gradient(to right, yellow, blue);
-  display: flex;
-  justify-content: center;
 }
 
 .calculator {
+  font-family: $font-first;
   display: grid;
   justify-content: center;
   align-content: center;
   min-height: 100vh;
   grid-template-columns: repeat(4, 100px);
   grid-template-rows: minmax(120px, auto) repeat(5, 100px);
-  text-shadow: 4px 4px 4px black;
+  text-shadow: 4px 4px 4px $color-dark;
+}
+
+.themes {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+.calculator.military {
+  background-color: $color-mil-bgd;
+  font-family: $font-second;
+
+  button {
+    font-family: $font-second;
+    background: $color-mil-bgd;
+    border: 1px solid $color-third;
+    margin: 4px;
+    color: $color-mil-light;
+    box-shadow: 0px 0px 3px 1px rgba(193, 198, 165, 0.75);
+    text-shadow: 0px 0px 3px $color-mil-light;
+  }
+  
+  button:hover {
+    color: $color-mil-d-third;
+    background: $color-mil-third;
+    transition: 0.8s;
+    box-shadow: none;
+  }
+
+  .result {
+    border: 1px solid $color-third;
+    margin: 4px;
+    border-radius: 0;
+    box-shadow: 0px 0px 8px 1px rgba(193, 198, 165, 0.75);
+    text-shadow: 5px 3px 2px $color-third;
+  }
+
+  .themes {
+    button {
+      background:  rgba(0, 0, 0, .3);
+    }
+
+    button:hover {
+      background: $color-mil-bgd;
+      color: $color-mil-light;
+      box-shadow: 0px 0px 3px 1px rgba(39, 45, 11, 1);
+    }
+  }
 }
 
 button {
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 32px;
   border: 1px solid transparent;
   outline: none;
   background: transparent;
-  text-shadow: 1px 1px 3px black;
+  text-shadow: 1px 1px 3px $color-dark;
+  font-family: $font-first;
 }
 
 button:hover {
-  text-shadow: 2px 2px 7px black;
+  text-shadow: 2px 2px 7px $color-dark;
   font-weight: bolder;
 }
 
@@ -39,7 +104,7 @@ button:hover {
 }
 
 .result {
-  grid-column: 1 / -1; 
+  grid-column: 1 / -1;
   background-color: rgba(0, 0, 0, .3);
   display: flex;
   align-items: flex-end;
@@ -48,7 +113,7 @@ button:hover {
   padding: 10px;
   word-wrap: break-word;
   word-break: break-all;
-  color: white;
+  color: $color-light;
   border-radius: 12px;
   font-size: 40px;
 }

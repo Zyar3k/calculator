@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Black+Ops+One&display=swap");
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -5,14 +7,14 @@
 body {
   padding: 0;
   margin: 0;
+}
+
+.container {
   background: linear-gradient(to right, yellow, blue);
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
 }
 
 .calculator {
+  font-family: "Permanent Marker", cursive;
   display: -ms-grid;
   display: grid;
   -ms-flex-pack: center;
@@ -24,20 +26,66 @@ body {
       grid-template-columns: repeat(4, 100px);
   -ms-grid-rows: minmax(120px, auto) (100px)[5];
       grid-template-rows: minmax(120px, auto) repeat(5, 100px);
-  text-shadow: 4px 4px 4px black;
+  text-shadow: 4px 4px 4px #111111;
+}
+
+.themes {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+.calculator.military {
+  background-color: #4B5320;
+  font-family: "Black Ops One", cursive;
+}
+
+.calculator.military button {
+  font-family: "Black Ops One", cursive;
+  background: #4B5320;
+  border: 1px solid grey;
+  margin: 4px;
+  color: #C1C6A5;
+  box-shadow: 0px 0px 3px 1px rgba(193, 198, 165, 0.75);
+  text-shadow: 0px 0px 3px #C1C6A5;
+}
+
+.calculator.military button:hover {
+  color: #272D0B;
+  background: #707941;
+  transition: 0.8s;
+  box-shadow: none;
+}
+
+.calculator.military .result {
+  border: 1px solid grey;
+  margin: 4px;
+  border-radius: 0;
+  box-shadow: 0px 0px 8px 1px rgba(193, 198, 165, 0.75);
+  text-shadow: 5px 3px 2px grey;
+}
+
+.calculator.military .themes button {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.calculator.military .themes button:hover {
+  background: #4B5320;
+  color: #C1C6A5;
+  box-shadow: 0px 0px 3px 1px #272d0b;
 }
 
 button {
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 32px;
   border: 1px solid transparent;
   outline: none;
   background: transparent;
-  text-shadow: 1px 1px 3px black;
+  text-shadow: 1px 1px 3px #111111;
+  font-family: "Permanent Marker", cursive;
 }
 
 button:hover {
-  text-shadow: 2px 2px 7px black;
+  text-shadow: 2px 2px 7px #111111;
   font-weight: bolder;
 }
 
@@ -60,7 +108,7 @@ button:hover {
   padding: 10px;
   word-wrap: break-word;
   word-break: break-all;
-  color: white;
+  color: #FFFFFF;
   border-radius: 12px;
   font-size: 40px;
 }

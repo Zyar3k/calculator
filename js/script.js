@@ -1,6 +1,10 @@
 const buttons = document.querySelector('.buttons');
 const resultDisplay = document.querySelector('.result');
 const point = document.querySelector('.point');
+const modern = document.querySelector('.modern');
+const military = document.querySelector('.military');
+const calculator = document.querySelector('.calculator');
+
 
 let stringNumber,
     currentNumber,
@@ -104,3 +108,11 @@ buttons.addEventListener('click', evt => {
     sign();
   }  
 });
+
+modern.addEventListener('click', () => {
+  calculator.classList.remove('military');
+})
+
+military.addEventListener('click', () => {
+  calculator.classList.add('military');
+})
